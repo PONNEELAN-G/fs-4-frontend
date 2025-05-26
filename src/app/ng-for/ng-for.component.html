@@ -1,1 +1,96 @@
-<p>ng-for works!</p>
+<!-- <div class="container">
+    <h2 class="text-center m-4">NGFOR AND FOR</h2>
+    <div class="row m-3 text-center">
+        <div class="col-3">
+            <select>
+                <option *ngFor="let emp of employees">
+                    {{emp.id}} - {{emp.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-7">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employees">
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.department}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-2">
+            <ol>
+                <li *ngFor="let company of companies">
+                    {{company}}
+                </li>
+            </ol>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="container">
+    <h2 class="text-center m-4">NGFOR AND FOR</h2>
+    <div class="row m-3 text-center">
+        <div class="col-3">
+            <select>
+                @for (emp of employees; track emp) {
+                    <option>
+                        {{emp.id}} - {{emp.name}}
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-7">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (emp of employees; track emp) {
+                        <tr>
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.name}}</td>
+                            <td>{{emp.department}}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-2">
+            <ol>
+                @for (company of companies; track company; let i=$index,f=$first,l=$last,c=$count,o=$odd,e=$even) {
+                    @if (f) {
+                        <li style="color: green;">{{company}}</li>
+                    }
+                    @else if (l) {
+                        <li style="color: red;">{{company}}</li>
+                    }
+                    @else {
+                        <li>{{company}}</li>
+                    }
+                }
+                @empty {
+                    No companies found
+                }
+            </ol>
+        </div>
+    </div>
+</div>
