@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 class="text-center m-4">Input and Output Decorators</h2>
+    <div class="row text-center">
+        <div class="col-6">
+            <h4 class="m-2">Parent</h4>
+            <p>{{message}}</p>
+        </div>
+
+        <div class="col-6">
+            <app-child [child]="parent" (childData)="receiveData($event)"></app-child>
+        </div>
+    </div>
+</div>

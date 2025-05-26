@@ -6,6 +6,7 @@ import { PnfComponent } from './pnf/pnf.component';
 import { AttributeDirectiveComponent } from './attribute-directive/attribute-directive.component';
 import { TdfComponent } from './tdf/tdf.component';
 import { RfComponent } from './rf/rf.component';
+import { ParentComponent } from './parent/parent.component';
 
 export const routes: Routes = [
     {path:'',component:NgIfComponent},
@@ -15,5 +16,6 @@ export const routes: Routes = [
     {path:'ad',component:AttributeDirectiveComponent},
     {path:'tdf',component:TdfComponent},
     {path:'rf',component:RfComponent},
+    {path:'parent',component:ParentComponent},
     {path:'**',component:PnfComponent}
 ];
