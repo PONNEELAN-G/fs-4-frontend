@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 class="text-center m-4">NGCLASS</h2>
+    <div class="row text-center m-3">
+        <div class="col-4">
+            <h3 [ngClass]="textColor">Hello world</h3>
+            <button class="btn btn-success m-2" (click)="changeColor('text-success')">Change to green</button>
+            <button class="btn btn-danger m-2" (click)="changeColor('text-danger')">Change to red</button>
+        </div>
+
+        <div class="col-4">
+            <h3 [ngClass]="inputColor ? 'text-success':'text-danger'">Hello world</h3>
+            <input type="checkbox" [(ngModel)]="inputColor"> Change color
+        </div>
+
+        <div class="col-4">
+            <h3 [ngClass]="typeColor">Hello world</h3>
+            <input class="m-3" type="text" [(ngModel)]="typeColor" placeholder="Eg. text-success">
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2 class="text-center m-4">NGSTYLE</h2>
+    <div class="row text-center m-3">
+        <div class="col-4">
+            <h3 [ngStyle]="{'color':textColor2}">Good day</h3>
+            <button class="btn btn-warning m-2" (click)="updateColor('orange')">Change to orange</button>
+            <button class="btn btn-primary m-2" (click)="updateColor('blue')">Change to blue</button>
+        </div>
+
+        <div class="col-4">
+            <h3 [ngStyle]="{'color':inputColor2 ? 'orange':'blue'}">Good day</h3>
+            <input type="checkbox" (click)="isOrange()"> Change color
+        </div>
+
+        <div class="col-4">
+            <h3 [ngStyle]="customClass">Good day</h3>
+        </div>
+    </div>
+</div>
