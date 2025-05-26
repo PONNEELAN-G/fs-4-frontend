@@ -1,1 +1,73 @@
-<p>ng-switch works!</p>
+<!-- <div class="container">
+    <h2 class="text-center m-4">NGSWITCH AND SWITCH</h2>
+    <div class="row m-3 text-center">
+        <div class="col-6">
+            <button class="btn btn-primary m-2" (click)="set(1)">Grade-1</button>
+            <button class="btn btn-secondary m-2" (click)="set(2)">Grade-2</button>
+            <button class="btn btn-warning m-2" (click)="set(3)">Grade-3</button>
+            <div [ngSwitch]="grade">
+                <div class="m-2" *ngSwitchCase="1">FIRST GRADE</div>
+                <div class="m-2" *ngSwitchCase="2">SECOND GRADE</div>
+                <div class="m-2" *ngSwitchCase="3">THIRD GRADE</div>
+                <div class="m-2" *ngSwitchDefault>No results found</div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <select class="w-25" [(ngModel)]="currentDay">
+                <option [value]="day" *ngFor="let day of days">{{day}}</option>
+            </select>
+            <div [ngSwitch]="currentDay">
+                <h3 class="m-3" *ngSwitchCase="'sunday'">Start of the week</h3>
+                <h3 class="m-3" *ngSwitchCase="'saturday'">End of the week</h3>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <h2 class="text-center m-4">NGSWITCH AND SWITCH</h2>
+    <div class="row m-3 text-center">
+        <div class="col-6">
+            <button class="btn btn-primary m-2" (click)="set(1)">Grade-1</button>
+            <button class="btn btn-secondary m-2" (click)="set(2)">Grade-2</button>
+            <button class="btn btn-warning m-2" (click)="set(3)">Grade-3</button>
+            <div class="m-3">
+                @switch (grade) {
+                    @case (1) {
+                        FIRST GRADE
+                    }
+                    @case (2) {
+                        SECOND GRADE
+                    }
+                    @case (3) {
+                        THIRD GRADE
+                    }
+                    @default {
+                        No results found
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="col-6">
+            <select class="w-25" [(ngModel)]="currentDay">
+                @for (day of days; track day) {
+                    <option [value]="day">{{day}}</option>
+                }
+            </select>
+            <div class="m-3">
+                @switch (currentDay) {
+                    @case ('sunday') {
+                        Start of the week
+                    }
+                    @case ('saturday') {
+                        End of the week
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
