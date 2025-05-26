@@ -1,1 +1,62 @@
-<p>ng-if works!</p>
+<!-- <div class="container">
+    <h2 class="text-center m-4">NGIF AND IF</h2>
+    <div class="row text-center m-3">
+        <div class="col-4">
+            <input type="checkbox" (click)="isChecked()"> Terms & conditions
+            <div class="m-3" *ngIf="checkBox">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div *ngIf="inputBox">
+                <input type="text" value="ponneelan">
+            </div>
+            <button class="btn btn-primary m-3" (click)="onShow()">Show</button>
+            <button class="btn btn-danger m-3" (click)="onHide()">Hide</button>
+        </div>
+
+        <div class="col-4">
+            <input class=" m-2" type="text" [(ngModel)]="input1">
+            <input class="" type="text" [(ngModel)]="input2">
+            <h3 class="class m-3" *ngIf="input1==input2">Both texts are equal</h3>
+            <h3 class="class m-3" *ngIf="input1!=input2">Both texts are not equal</h3>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <h2 class="text-center m-4">NGIF AND IF</h2>
+    <div class="row text-center m-3">
+        <div class="col-4">
+            <input type="checkbox" (click)="isChecked()"> Terms & conditions
+            @if (checkBox) {
+                <div class="m-3">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            }
+        </div>
+
+        <div class="col-4">
+            @if (inputBox) {
+                <div>
+                    <input type="text" value="ponneelan">
+                </div>
+            }
+            <button class="btn btn-primary m-3" (click)="onShow()">Show</button>
+            <button class="btn btn-danger m-3" (click)="onHide()">Hide</button>
+        </div>
+
+        <div class="col-4">
+            <input class=" m-2" type="text" [(ngModel)]="input1">
+            <input class="" type="text" [(ngModel)]="input2">
+            @if (input1==input2) {
+                <h3 class="class m-3">Both texts are equal</h3>
+            }
+            @if (input1!=input2) {
+                <h3 class="class m-3">Both texts are not equal</h3>
+            }
+        </div>
+    </div>
+</div>
