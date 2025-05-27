@@ -7,6 +7,10 @@ import { AttributeDirectiveComponent } from './attribute-directive/attribute-dir
 import { TdfComponent } from './tdf/tdf.component';
 import { RfComponent } from './rf/rf.component';
 import { ParentComponent } from './parent/parent.component';
+import { CrudComponent } from './crud/crud.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 
 export const routes: Routes = [
     {path:'',component:NgIfComponent},
@@ -17,5 +21,9 @@ export const routes: Routes = [
     {path:'tdf',component:TdfComponent},
     {path:'rf',component:RfComponent},
     {path:'parent',component:ParentComponent},
+    {path:'crud',component:CrudComponent},
+    {path:'add',component:AddStudentComponent},
+    {path:'view/:id',component:ViewStudentComponent},
+    {path:'update/:id',component:UpdateStudentComponent},
     {path:'**',component:PnfComponent}
 ];
